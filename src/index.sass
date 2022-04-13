@@ -42,7 +42,8 @@ code
 .container
   padding: 0 20px
 
-
+.wrapper 
+  padding-bottom: 10px
 
 
 .content 
@@ -151,6 +152,25 @@ code
         height: 100%
 
 
+.artists 
+  &Item 
+    min-width: 180px
+    height: 180px
+    overflow: hidden
+    border-radius: 100px
+    position: relative
+    margin: 10px 0
+    margin-right: 10px
+    img 
+      width: 110%
+      height: 110%
+      object-fit: cover
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+   
+
 
 .cards 
   &Title 
@@ -168,6 +188,8 @@ code
     min-width: 180px
     height: 180px
     overflow: hidden
+    margin-right: 4px
+    border-radius: 10px
     img 
       width: 100%
       height: 100%

@@ -3,14 +3,14 @@ import React from 'react';
 export const Header = () => {
     return (
         <header className='header'
-            style={{ "backgroundImage": "url(./header/background/2.jpg)" }}
+            style={{ "backgroundImage": "url(./header/background/1.jpg)" }}
 
         >
             <div className="headerOverflow"></div>
             <div className="container d-flex jcsb full-height aife">
                 <div className="headerContent d-flex aife">
                     <div className="headerAvatar">
-                        <img src="./header/avatar/2.png" alt="Arsist Avatar" />
+                        <img src="./header/avatar/1.png" alt="Arsist Avatar" />
                     </div>
                     <div className="headerCenter d-flex fxdc jcfe">
                         <div className="headerCenterTop d-flex aife">

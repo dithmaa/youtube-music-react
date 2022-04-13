@@ -11,10 +11,6 @@ export const Songs = () => {
                 </h3>
                 <div className="songsWrapper">
                     <SongsItem/>
-                    <SongsItem/>
-                    <SongsItem/>
-                    <SongsItem/>
-                    <SongsItem/>
                 </div>
             </div>
         </div>
