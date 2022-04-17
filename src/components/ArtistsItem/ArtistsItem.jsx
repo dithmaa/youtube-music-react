@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import avatar from '../../assets/header/avatar/1.png';
 
-export const ArtistsItem = ({avatar, onClick}) => {
-    console.log(avatar);
+export const ArtistsItem = ({onClick, id}) => {
     return (
-        <div className="artistsItem" onClick={onClick}>
-            <img src={avatar} alt="Artists Card" />
-        </div>
+        <Link to={`/artists/${id}`}>
+            <div className="artistsItem" onClick={onClick}>
+                <img src={avatar} alt="Artists Card" />
+            </div>
+        </Link>
     )
 }

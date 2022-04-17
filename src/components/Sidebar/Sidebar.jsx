@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import css from './Sidebar.module.sass';
-
+import homeSvg from '../../assets/icons/home.svg';
+import playlistSvg from '../../assets/icons/playlist.svg';
+import micSvg from '../../assets/icons/mic.svg';
+import medalSvg from '../../assets/icons/medal.svg';
+import heartSvg from '../../assets/icons/heart_like.svg';
+import userSvg from '../../assets/icons/user.svg';
 
 export const Sidebar = () => {
     return (
@@ -15,30 +21,30 @@ export const Sidebar = () => {
                     </div>
                 </div>
                 <div className={css.sidebarContent}>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/home.svg" alt="home-icon" />
+                    <Link to="/" className={css.sidebarItem}>
+                        <img src={homeSvg} alt="home-icon" />
                         <span>Home</span>
-                    </a>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/playlist.svg" alt="playlist-icon" />
+                    </Link>
+                    <Link to="/Playlist" className={css.sidebarItem}>
+                        <img src={playlistSvg} alt="playlist-icon" />
                         <span>Playlist</span>
-                    </a>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/mic.svg" alt="mic-icon" />
+                    </Link>
+                    <Link to="/artists" className={css.sidebarItem}>
+                        <img src={micSvg} alt="mic-icon" />
                         <span>Artist</span>
-                    </a>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/medal.svg" alt="medal-icon" />
+                    </Link>
+                    <Link to="/premium" className={css.sidebarItem}>
+                        <img src={medalSvg} alt="medal-icon" />
                         <span>Premium</span>
-                    </a>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/heart_like.svg" alt="heart-like-icon" />
+                    </Link>
+                    <Link to="Liked" className={css.sidebarItem}>
+                        <img src={heartSvg} alt="heart-like-icon" />
                         <span>Liked</span>
-                    </a>
-                    <a href="#" className={css.sidebarItem}>
-                        <img src="./icons/user.svg" alt="user-icon" />
+                    </Link>
+                    <Link to="account" className={css.sidebarItem}>
+                        <img src={userSvg} alt="user-icon" />
                         <span>My Account</span>
-                    </a>
+                    </Link>
                     
                 </div>
             </div>

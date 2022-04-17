@@ -1,4 +1,10 @@
-import React from 'react'
+import React from 'react';
+import picture from '../../assets/Songs/pictures/1.png';
+import explicitIcon from '../../assets/icons/explicit.svg'
+import addToPlaylistIcon from '../../assets/icons/add-to-playlist.svg'
+import playIcon from '../../assets/icons/play.svg'
+import moreIcon from '../../assets/icons/more-dots.svg'
+
 
 export const SongsItem = () => {
     return (
@@ -8,14 +14,14 @@ export const SongsItem = () => {
                     1 -
                 </span>
                 <div className="songsItemPicture">
-                    <img src="./songs/pictures/1.png" alt="song picture" />
+                    <img src={picture} alt="song picture" />
                 </div>
                 <div className="songsItemTitle">
                     <h4>
                         Fefe
                     </h4>
                     <span className="songsItemExplicit">
-                        <img src="./icons/explicit.svg" alt="explicit" />
+                        <img src={explicitIcon} alt="explicit" />
                     </span>
                 </div>
             </div>
@@ -24,7 +30,7 @@ export const SongsItem = () => {
             </div>
             <div className="songsItemActions">
                 <button className="buttonIcon">
-                    <img src="./icons/play.svg" alt="play icon" />
+                    <img src={playIcon} alt="play icon" />
                 </button>
                 <button className="buttonIcon">
                     <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,10 +38,10 @@ export const SongsItem = () => {
                     </svg>
                 </button>
                 <button className="buttonIcon">
-                    <img src="./icons/add-to-playlist.svg" alt="playlist" />
+                    <img src={addToPlaylistIcon} alt="playlist" />
                 </button>
                 <button className="buttonIcon">
-                    <img src="./icons/more-dots.svg" alt="More Settings" />
+                    <img src={moreIcon} alt="More Settings" />
                 </button>
             </div>
         </div>

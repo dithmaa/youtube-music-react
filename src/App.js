@@ -1,6 +1,8 @@
 import { Sidebar } from './components/Sidebar'; 
 import { Artists } from './pages/Artists'; 
 import { Home } from './pages/Home'; 
+import { ArtistsPage } from './pages/ArtistsPage'; 
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const ArtistsList = [
   {
@@ -65,11 +67,21 @@ function App() {
   return (
     <div className="youtube-music">
       <div className="wrapper">
+      <Router>
         <Sidebar/>
         <main className="content">
-          <Home ArtistsList={ArtistsList}/> 
+          
+            <Routes>
+              <Route path="/" element={<Home ArtistsList={ArtistsList}/> }/>
+              <Route path="/artists" element={<Artists ArtistsList={ArtistsList}/> }/>
+              <Route path="/artists/:id" element={<ArtistsPage ArtistsList={ArtistsList}/> }/>
+            </Routes>
+          
+          
         </main>
+        </Router>
       </div>
+      
     </div>
   );
 }
