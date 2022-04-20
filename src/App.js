@@ -8,10 +8,10 @@ const ArtistsList = [
   {
     id: 0,
     name: "6ix9ine",
-    totalListenAmount: 925,
-    followerAmount: 1300,
-    cover: "./header/background/1.jpg",
-    avatar: "./header/avatar/1.png",
+    totalListenAmount: 13925,
+    followerAmount: 9300,
+    cover: "https://i.ibb.co/GdKBS7M/1.jpg",
+    avatar: "https://outstyle.org/images/news/2/2/9/Tekashi-6ix9ine.jpg",
     songs: [
       {
         id: 0,
@@ -38,8 +38,8 @@ const ArtistsList = [
     name: "Big Baby Tape",
     totalListenAmount: 925,
     followerAmount: 1300,
-    cover: "./header/background/2.jpg",
-    avatar: "./header/avatar/2.png",
+    cover: "https://i.ibb.co/qmG0Hm6/2.jpg",
+    avatar: "https://upload.wikimedia.org/wikipedia/ru/0/00/Trap_Luv.jpg",
     songs: [
       {
         id: 0,

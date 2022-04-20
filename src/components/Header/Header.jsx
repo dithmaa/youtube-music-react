@@ -1,27 +1,26 @@
 import React from 'react';
-import headerBackground from '../../assets/header/background/1.jpg';
-import headerAvatar from '../../assets/header/avatar/1.png';
 import verified from '../../assets/icons/verified.svg';
 import musicIcon from '../../assets/icons/music-amount.svg';
-import followerAmount from '../../assets/icons/follower-amount.svg';
+import followerAmountIcon from '../../assets/icons/follower-amount.svg';
 
 
-export const Header = ({title = "Имя"}) => {
+export const Header = ({name, totalListenAmount, followerAmount, cover, avatar}) => {
+    console.log(name);
     return (
         <header className='header'
-            style={{ "backgroundImage": `url(${headerBackground})` }}
+            style={{ "backgroundImage": `url(${cover})` }}
 
         >
             <div className="headerOverflow"></div>
             <div className="container d-flex jcsb full-height aife">
                 <div className="headerContent d-flex aife">
                     <div className="headerAvatar">
-                        <img src={headerAvatar} alt="Arsist Avatar" />
+                        <img src={avatar} alt="Arsist Avatar" />
                     </div>
                     <div className="headerCenter d-flex fxdc jcfe">
                         <div className="headerCenterTop d-flex aife">
                             <h2 className="headerTitle headerTitleSmall">
-                                {title}
+                                { name }
                             </h2>
                             <div className="headerVerified">
                                 <img src={verified} alt="verified" />
@@ -34,7 +33,7 @@ export const Header = ({title = "Имя"}) => {
                                         <img src={musicIcon} alt="Music Key Icon" />
                                     </div>
                                     <div className="headerAmountNumbers">
-                                        1,985,255 Monthly Listener
+                                       {totalListenAmount} Monthly Listener
                                     </div>
                                 </div>
                                 <span className="headerAmountDash">
@@ -42,10 +41,10 @@ export const Header = ({title = "Имя"}) => {
                                 </span>
                                 <div className="headerAmountItem d-flex">
                                     <div className="headerAmountIcon">
-                                        <img src={followerAmount} alt="Follower Amount Icon" />
+                                        <img src={followerAmountIcon} alt="Follower Amount Icon" />
                                     </div>
                                     <div className="headerAmountNumbers">
-                                        15,800,000 Follower
+                                        {followerAmount} Follower
                                     </div>
                                 </div>
                             </div>

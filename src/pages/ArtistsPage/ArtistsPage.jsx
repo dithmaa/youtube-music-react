@@ -6,12 +6,12 @@ import { Header } from '../../components/Header';
 import { useParams } from 'react-router-dom';
 
 export const ArtistsPage = ({ ArtistsList }) => {
-
   let { id } = useParams();
+  let ArtistsListItem = ArtistsList.filter(item=>item.id == id)[0];
 
   return (
     <div className="homePage">
-      <Header />
+      <Header {...ArtistsListItem}/>
       <Songs />
       <Cards />
       <ArtistsSlider ArtistsList={ArtistsList} />
