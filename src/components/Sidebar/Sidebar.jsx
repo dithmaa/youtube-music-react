@@ -7,6 +7,8 @@ import micSvg from '../../assets/icons/mic.svg';
 import medalSvg from '../../assets/icons/medal.svg';
 import heartSvg from '../../assets/icons/heart_like.svg';
 import userSvg from '../../assets/icons/user.svg';
+import logo from '../../assets/logo192.png';
+import logoText from '../../assets/music.png';
 
 export const Sidebar = () => {
     return (
@@ -14,10 +16,10 @@ export const Sidebar = () => {
             <div className="container">
                 <div className={css.logo + " logo d-flex aic"}>
                     <div className={css.logoIcon + " logoIcon"}>
-                        <img src="./logo192.png" width={72} alt="" />
+                        <img src={logo} width={72} alt="" />
                     </div>
                     <div className={css.logoText + ' logoText'}>
-                        <img src="./music.png" width={166} height={56} alt="" />
+                        <img src={logoText} width={166} height={56} alt="" />
                     </div>
                 </div>
                 <div className={css.sidebarContent}>
