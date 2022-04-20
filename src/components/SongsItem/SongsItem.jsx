@@ -1,24 +1,43 @@
-import React from 'react';
-import picture from '../../assets/Songs/pictures/1.png';
-import explicitIcon from '../../assets/icons/explicit.svg'
-import addToPlaylistIcon from '../../assets/icons/add-to-playlist.svg'
-import playIcon from '../../assets/icons/play.svg'
-import moreIcon from '../../assets/icons/more-dots.svg'
+import React, { useRef } from 'react';
+import explicitIcon from '../../assets/icons/explicit.svg';
+import addToPlaylistIcon from '../../assets/icons/add-to-playlist.svg';
+import playIcon from '../../assets/icons/play.svg';
+import pausedIcon from '../../assets/icons/paused.svg';
+import moreIcon from '../../assets/icons/more-dots.svg';
+
+import {Howl, Howler} from 'howler';
 
 
-export const SongsItem = () => {
+
+export const SongsItem = ({id,name,listenAmount,imageUrl, songUrl}) => {
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const audioRef = useRef();
+   
+    const play = () => {
+        
+        const audio = audioRef.current;
+        audio.volume = 0.5;
+        if(!isPlaying){
+            setIsPlaying(true);
+            audio.play();
+        } 
+        if(isPlaying){
+            setIsPlaying(false);
+            audio.pause();
+        }
+    } 
     return (
         <div className="songsItem">
             <div className="songsItemInfo">
                 <span className="songsItemPosition">
-                    1 -
+                    {id + 1} -
                 </span>
                 <div className="songsItemPicture">
-                    <img src={picture} alt="song picture" />
+                    <img src={imageUrl} alt="song picture" />
                 </div>
                 <div className="songsItemTitle">
                     <h4>
-                        Fefe
+                        {name}
                     </h4>
                     <span className="songsItemExplicit">
                         <img src={explicitIcon} alt="explicit" />
@@ -26,11 +45,17 @@ export const SongsItem = () => {
                 </div>
             </div>
             <div className="songsItemViews">
-                <span>681.049.060</span>
+                <span>{listenAmount}</span>
             </div>
             <div className="songsItemActions">
-                <button className="buttonIcon">
-                    <img src={playIcon} alt="play icon" />
+                <audio ref={audioRef} src={songUrl}></audio>
+                <button className="buttonIcon" onClick={play}>
+                    {
+                        !isPlaying ?
+                        <img src={playIcon} alt="play icon" />
+                        : <img src={pausedIcon} alt="play icon" />
+                    }
+                    
                 </button>
                 <button className="buttonIcon">
                     <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">

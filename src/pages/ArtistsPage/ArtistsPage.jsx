@@ -12,7 +12,7 @@ export const ArtistsPage = ({ ArtistsList }) => {
   return (
     <div className="homePage">
       <Header {...ArtistsListItem}/>
-      <Songs />
+      <Songs ArtistSongs={ArtistsListItem.songs}/>
       <Cards />
       <ArtistsSlider ArtistsList={ArtistsList} />
     </div>
