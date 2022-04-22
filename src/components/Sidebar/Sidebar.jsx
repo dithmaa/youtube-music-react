@@ -9,8 +9,43 @@ import heartSvg from '../../assets/icons/heart_like.svg';
 import userSvg from '../../assets/icons/user.svg';
 import logo from '../../assets/logo192.png';
 import logoText from '../../assets/music.png';
+import classNames from 'classnames';
 
 export const Sidebar = () => {
+    const [activeItem, setActiveItem] = React.useState(0);
+    const items = [
+        {
+            name: 'Home',
+            iconUrl: homeSvg,
+            linkTo: "/"
+        },
+        {
+            name: 'Playlist',
+            iconUrl: playlistSvg,
+            linkTo: "/playlist"
+        },
+        {
+            name: 'Artists',
+            iconUrl: micSvg,
+            linkTo: "/artists"
+        },
+        {
+            name: 'Premium',
+            iconUrl: medalSvg,
+            linkTo: "/premium"
+        },
+        {
+            name: 'Liked',
+            iconUrl: heartSvg,
+            linkTo: "liked"
+        },
+        {
+            name: 'My Account',
+            iconUrl: userSvg,
+            linkTo: "account"
+        },
+
+    ];
     return (
         <aside className={css.sidebar}>
             <div className="container">
@@ -23,30 +58,21 @@ export const Sidebar = () => {
                     </div>
                 </div>
                 <div className={css.sidebarContent}>
-                    <Link to="/" className={css.sidebarItem}>
-                        <img src={homeSvg} alt="home-icon" />
-                        <span>Home</span>
-                    </Link>
-                    <Link to="/Playlist" className={css.sidebarItem}>
-                        <img src={playlistSvg} alt="playlist-icon" />
-                        <span>Playlist</span>
-                    </Link>
-                    <Link to="/artists" className={css.sidebarItem}>
-                        <img src={micSvg} alt="mic-icon" />
-                        <span>Artist</span>
-                    </Link>
-                    <Link to="/premium" className={css.sidebarItem}>
-                        <img src={medalSvg} alt="medal-icon" />
-                        <span>Premium</span>
-                    </Link>
-                    <Link to="Liked" className={css.sidebarItem}>
-                        <img src={heartSvg} alt="heart-like-icon" />
-                        <span>Liked</span>
-                    </Link>
-                    <Link to="account" className={css.sidebarItem}>
-                        <img src={userSvg} alt="user-icon" />
-                        <span>My Account</span>
-                    </Link>
+                    
+                   {
+                       items.map((item, index)=>((
+                        <Link to={item.linkTo} className={css.sidebarItem + " " + classNames({
+                            "SidebarItemActive": activeItem === index
+                        })
+                        }
+                        onClick={()=>setActiveItem(index)}
+                        key={item.name + "_" + index}
+                        >
+                            <img src={item.iconUrl} alt="home-icon" />
+                            <span>{item.name}</span>
+                        </Link>
+                       )))
+                   }
                     
                 </div>
             </div>

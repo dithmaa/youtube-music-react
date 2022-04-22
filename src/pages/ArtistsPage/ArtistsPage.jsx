@@ -13,7 +13,7 @@ export const ArtistsPage = ({ ArtistsList }) => {
     <div className="homePage">
       <Header {...ArtistsListItem}/>
       <Songs ArtistSongs={ArtistsListItem.songs}/>
-      <Cards />
+      <Cards ArtistSongs={ArtistsListItem.songs} />
       <ArtistsSlider ArtistsList={ArtistsList} />
     </div>
   )

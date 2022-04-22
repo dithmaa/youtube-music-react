@@ -4,14 +4,12 @@ import { Cards } from '../../components/Cards';
 import { ArtistsSlider } from '../../components/ArtistsSlider'; 
 import { Header } from '../../components/Header';
 
-export const Home = ({ArtistsList}) => {
-  const entireSongs = ArtistsList.map(({songs})=>{
-    return songs;
-  }).flat();
+export const Home = ({entireSongs, ArtistsList}) => {
+  const firstFourSongs = entireSongs.slice(0,4);
   return (
     <div className="homePage">
-        <Songs ArtistSongs={entireSongs}/>            
-        <Cards/>
+        <Songs ArtistSongs={firstFourSongs}/>            
+        <Cards ArtistSongs={entireSongs}/>
         <ArtistsSlider ArtistsList={ArtistsList}/>
     </div>
   )

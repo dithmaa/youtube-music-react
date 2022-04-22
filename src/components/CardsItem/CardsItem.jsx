@@ -1,10 +1,10 @@
 import React from 'react';
-import picture from '../../assets/Cards/pictures/1.png';
+import { Link } from 'react-router-dom';
 
-export const CardsItem = () => {
+export const CardsItem = ({imageUrl, name}) => {
     return (
-        <div className="cardsItem">
-            <img src={picture} alt="Music Card" />
-        </div>
+        <Link to={`/card/${name}`} className="cardsItem">
+            <img src={imageUrl} alt="Music Card" />
+        </Link>
     )
 }

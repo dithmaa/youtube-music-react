@@ -162,6 +162,10 @@ code
     position: relative
     margin: 10px 0
     margin-right: 10px
+    cursor: pointer
+    transition: .25s ease opacity
+    &:hover
+      opacity: 0.8
     img 
       width: 110%
       height: 110%
@@ -189,13 +193,38 @@ code
     min-width: 180px
     height: 180px
     overflow: hidden
-    margin-right: 4px
+    margin-right: 10px
     border-radius: 10px
+    cursor: pointer
+    transition: .25s ease opacity
+    &:hover
+      opacity: 0.8
     img 
       width: 100%
       height: 100%
       object-fit: cover
-
+.card 
+  padding-top: 20px
+  .buttonIcon
+    margin-top: 20px!important
+    margin-left: 0!important
+    padding: 0
+    
+  &Item 
+    .container 
+      display: flex
+  &Views 
+    opacity: 0.8
+    font-size: 20px
+  &Right 
+    margin-left: 20px
+  &Name 
+    font-size: 40px
+    font-weight: bold
+  &Picture
+    width: 200px
+    img 
+      width: 100%
 
 @media screen and (max-width: 1200px)
   .container 
@@ -287,3 +316,6 @@ code
   &:active
     opacity: 1
     transform: translateY(1px)
+
+.SidebarItemActive
+  opacity: 0.8!important

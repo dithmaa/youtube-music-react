@@ -12,9 +12,9 @@ export const Songs = ({ArtistSongs}) => {
                 </h3>
                 <div className="songsWrapper">
                     {
-                        ArtistSongs.map((song)=>{
+                        ArtistSongs.map((song, index)=>{
                             return(
-                                <SongsItem {...song}/>
+                                <SongsItem key={song.name + "_" + index} {...song} index={index}/>
                             )
                         })
                     }
