@@ -18,28 +18,32 @@ const playlistSlice = createSlice({
                   name: "Trap Luv",
                   listenAmount: 11809555,
                   imageUrl: 'https://upload.wikimedia.org/wikipedia/ru/0/00/Trap_Luv.jpg',
-                  songUrl: 'https://www.mboxdrive.com/TrapLuv.mp3'
+                  songUrl: 'https://www.mboxdrive.com/TrapLuv.mp3',
+                  playlist: true
                 },
                 {
                   id: 1,
                   name: "Gimme the loot",
                   listenAmount: 35136476,
                   imageUrl: 'https://upload.wikimedia.org/wikipedia/ru/8/80/Dragonborn.jpg',
-                  songUrl: 'https://www.mboxdrive.com/Gimmetheloot.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Gimmetheloot.mp3',
+                  playlist: false
                 },
                 {
                   id: 2,
                   name: "Kari",
                   listenAmount: 20172055,
                   imageUrl: 'https://images.genius.com/ab6849cdb3eec53c5f223c0111f820aa.1000x1000x1.jpg',
-                  songUrl: 'https://www.mboxdrive.com/Kari.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Kari.mp3',
+                  playlist: false
                 },
                 {
                   id: 3,
                   name: "Balance",
                   listenAmount: 819215,
                   imageUrl: 'https://images.genius.com/1789b168a9beb7dae46ab1ac1b2ae062.1000x1000x1.jpg',
-                  songUrl: 'https://www.mboxdrive.com/Balance.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Balance.mp3',
+                  playlist: false
                 }
               ]
             },
@@ -56,21 +60,24 @@ const playlistSlice = createSlice({
                   name: "Fefe",
                   listenAmount: 1003160248,
                   imageUrl: 'https://i.scdn.co/image/ab67616d0000b273a16370461881d18ace95d83f',
-                  songUrl: 'https://www.mboxdrive.com/Fefe.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Fefe.mp3',
+                  playlist: false
                 },
                 {
                   id: 1,
                   name: "Gooba",
                   listenAmount: 784451318,
                   imageUrl: 'https://upload.wikimedia.org/wikipedia/ru/d/d1/Gooba.png',
-                  songUrl: 'https://www.mboxdrive.com/Gooba.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Gooba.mp3',
+                  playlist: false
                 },
                 {
                   id: 2,
                   name: "Billy",
                   listenAmount: 422707867,
                   imageUrl: 'https://images.genius.com/0e858a12379a5dedcc4fbc25195d59f3.1000x1000x1.png',
-                  songUrl: 'https://www.mboxdrive.com/Billy.mp3'
+                  songUrl: 'https://www.mboxdrive.com/Billy.mp3',
+                  playlist: false
                 }
               ]
             },
@@ -87,19 +94,20 @@ const playlistSlice = createSlice({
                   name: "Ballin'",
                   listenAmount: 210,
                   imageUrl: 'https://images.genius.com/9e52d12579d5e8772e0456571e7537ed.1000x1000x1.jpg',
-                  songUrl: 'https://www.mboxdrive.com/ballin.mp3'
+                  songUrl: 'https://www.mboxdrive.com/ballin.mp3',
+                  playlist: false
                 }
               ]
             }
           ],
-          songsInPlaylist: []
+
     },
     reducers: {
         setSongInPlaylist: (state, action) => {
-            state.itemsInPlaylist.push(action.payload)
+            state.artistsList.filter(song => song.id == action.payload).playlist = true
         },
         removeSongInPlaylist: (state, action) => {
-            state.itemsInPlaylist = state.itemsInPlaylist.filter(song=>song.id !== action.payload);
+          state.artistsList.filter(song => song.id == action.payload).playlist = false
         }
     }
 });
