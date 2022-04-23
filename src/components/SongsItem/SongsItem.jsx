@@ -11,10 +11,11 @@ import { Howl, Howler } from 'howler';
 
 
 export const SongsItem = ({id,name,listenAmount,imageUrl, songUrl, index, addSongToPlaylist, isAddedInPlaylist}) => {
-    
+    const [isCheckedPlaylist, setCheckedPlaylist] = React.useState(0);
     const [isPlaying, setIsPlaying] = React.useState(false);
     const audioRef = useRef();
     const rootEl = useRef(null);
+    
 
     const onPause = (e) => {
         const audio = audioRef.current;
@@ -43,6 +44,10 @@ export const SongsItem = ({id,name,listenAmount,imageUrl, songUrl, index, addSon
             audio.pause();
         }
     } 
+    const handleAddToPlaylist = () => {
+        addSongToPlaylist();
+        setCheckedPlaylist(!isCheckedPlaylist);
+    }
     return (
         <div className="songsItem" ref={rootEl}>
             <div className="songsItemInfo">
@@ -81,9 +86,9 @@ export const SongsItem = ({id,name,listenAmount,imageUrl, songUrl, index, addSon
                         <path d="M5.96111 23.5C1.53133 17.625 3.00792 8.8125 10.3909 5.875C17.7739 2.9375 22.2036 8.8125 23.6802 11.75C25.1568 8.8125 31.0632 2.9375 38.4462 5.875C45.8291 8.8125 45.8291 17.625 41.3994 23.5C36.9696 29.375 23.6802 41.125 23.6802 41.125C23.6802 41.125 10.3909 29.375 5.96111 23.5Z" stroke="#C4C4C4" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </button>
-                <button className="buttonIcon" onClick={addSongToPlaylist}>
+                <button className="buttonIcon" onClick={handleAddToPlaylist}>
                     {
-                        !isAddedInPlaylist 
+                        !isCheckedPlaylist 
                         ?
                         <img src={addToPlaylistIcon} alt="playlist" />
                         :
